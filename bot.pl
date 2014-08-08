@@ -11,5 +11,5 @@ my $config = $c->load();
 my $bot = IIBnW::Bot->new($config);
 
 # Create client
-my $client = $bot->client();
+$bot->client();
 
