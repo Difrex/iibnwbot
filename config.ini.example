@@ -1,0 +1,16 @@
+[server]
+HOST        = jabber.org
+PORT        = 5222
+COMPONENT   = jabber.org
+
+[auth]
+USER        = 
+PASS        = 
+
+[client]
+RESOURCE    = IIBnWBot
+TLS         = 0
+CONNECT     = tcpip
+
+[debug]
+LEVEL       = 3
