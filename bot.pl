@@ -1,11 +1,15 @@
 #!/usr/bin/perl
 
-use strict;
-use warnings;
-
-use Net::XMPP;
-
 use IIBnW::Config;
+use IIBnW::Bot;
 
+# Load config
 my $c = IIBnW::Config->new('config.ini');
 my $config = $c->load();
+
+# The bot object
+my $bot = IIBnW::Bot->new($config);
+
+# Create client
+my $client = $bot->client();
+
