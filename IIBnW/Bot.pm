@@ -48,17 +48,17 @@ sub client {
 }
 
 sub messageCB {
-    my ($client) = @_;
+    my ($class, $client) = @_;
     my $sid      = shift;
     my $msg      = shift;
 
-    my $from = $msg->GetFrom;
-    my $to   = $msg->GetTo;
+    # my $from = $msg->GetFrom;
+    # my $to   = $msg->GetTo;
 
     my $name;
     my $data;
 
-    print "From : ", $from, "\n",
+    print "From : ", #$from, "\n",
         "Subject : ", $msg->GetSubject, "\n",
         $msg->GetBody, "\n";
 
@@ -70,8 +70,8 @@ sub messageCB {
     print $data, "\n";
 
     $client->MessageSend(
-        to       => $from,
-        from     => $to,
+        # to       => $from,
+        # from     => $to,
         resource => 'Gaim',
         type     => $msg->GetType,
         subject  => $msg->GetSubject,
@@ -84,7 +84,7 @@ sub connectCB {
 }
 
 sub authenCB {
-    my ($client) = @_;
+    my ($class, $client) = @_;
     print Dumper($client);
     print "Authed\n";
     $client->PresenceSend;
